@@ -1,0 +1,16 @@
+node_modules
+target
+screenshots
+allure
+allure-report
+allure/allure-report
+allure/allure-results/*.xml
+allure/allure-results/[!environment].xml
+allure/allure-results/history
+allure/allure-results/*.png
+allure-results
+testlog/*
+*.log
+*.png
+package-lock.json
+output/*.xml
