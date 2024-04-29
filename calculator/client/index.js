@@ -7,8 +7,8 @@ function doSum(client) {
     console.log('doSum was invoked');
 
     const req = new SumRequest()
-        .setFirstNumber(1)
-        .setSecondNumber(2);
+        .setFirstNumber(23)
+        .setSecondNumber(44);
         
     client.sum(req, (err, res) => {
         if (err) {

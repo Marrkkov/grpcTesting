@@ -28,9 +28,9 @@ function main() {
             cleanup(server);
             return;
         }
-
-        console.log(`Listening on ${addr}`);
+        server.start();
     });
+    console.log(`Listening on ${addr}`);
 }
 
 main();
