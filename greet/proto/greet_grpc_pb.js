@@ -39,11 +39,50 @@ var GreetServiceService = exports.GreetServiceService = {
     responseSerialize: serialize_greet_GreetResponse,
     responseDeserialize: deserialize_greet_GreetResponse,
   },
-  // 
-// rpc GreetManyTimes(GreetRequest) returns (stream GreetResponse);
-// rpc LongGreet(stream GreetRequest) returns (GreetResponse);
-// rpc GreetEveryone(stream GreetRequest) returns (stream GreetResponse);
-// rpc GreetWithDeadline(GreetRequest) returns (GreetResponse);
+  greetManyTimes: {
+    path: '/greet.GreetService/GreetManyTimes',
+    requestStream: false,
+    responseStream: true,
+    requestType: greet_pb.GreetRequest,
+    responseType: greet_pb.GreetResponse,
+    requestSerialize: serialize_greet_GreetRequest,
+    requestDeserialize: deserialize_greet_GreetRequest,
+    responseSerialize: serialize_greet_GreetResponse,
+    responseDeserialize: deserialize_greet_GreetResponse,
+  },
+  longGreet: {
+    path: '/greet.GreetService/LongGreet',
+    requestStream: true,
+    responseStream: false,
+    requestType: greet_pb.GreetRequest,
+    responseType: greet_pb.GreetResponse,
+    requestSerialize: serialize_greet_GreetRequest,
+    requestDeserialize: deserialize_greet_GreetRequest,
+    responseSerialize: serialize_greet_GreetResponse,
+    responseDeserialize: deserialize_greet_GreetResponse,
+  },
+  greetEveryone: {
+    path: '/greet.GreetService/GreetEveryone',
+    requestStream: true,
+    responseStream: true,
+    requestType: greet_pb.GreetRequest,
+    responseType: greet_pb.GreetResponse,
+    requestSerialize: serialize_greet_GreetRequest,
+    requestDeserialize: deserialize_greet_GreetRequest,
+    responseSerialize: serialize_greet_GreetResponse,
+    responseDeserialize: deserialize_greet_GreetResponse,
+  },
+  greetWithDeadline: {
+    path: '/greet.GreetService/GreetWithDeadline',
+    requestStream: false,
+    responseStream: false,
+    requestType: greet_pb.GreetRequest,
+    responseType: greet_pb.GreetResponse,
+    requestSerialize: serialize_greet_GreetRequest,
+    requestDeserialize: deserialize_greet_GreetRequest,
+    responseSerialize: serialize_greet_GreetResponse,
+    responseDeserialize: deserialize_greet_GreetResponse,
+  },
 };
 
 exports.GreetServiceClient = grpc.makeGenericClientConstructor(GreetServiceService);
